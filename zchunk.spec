@@ -4,7 +4,7 @@
 
 Summary:	Compressed file format that allows easy deltas
 Name:		zchunk
-Version:	0.7.5
+Version:	0.9.13
 Release:	1
 Group:		Archiving/Compression
 License:	BSD and MIT
@@ -52,21 +52,24 @@ library, libzck.
 rm -rf src/lib/hash/sha*
 
 %build
-%meson -Dwith-zstd=yes -Dwith-openssl=yes
+%meson -Dwith-openssl=enabled -Dwith-zstd=enabled
 %meson_build
 
 %install
 %meson_install
 
+# Install script for generating XML dictionaries
+install -Dpm 0755 contrib/gen_xml_dictionary %{buildroot}%{_libexecdir}/zck_gen_xml_dictionary
+
 %check
 %meson_test
-
 
 %files
 %doc README.md
 %license LICENSE
 %{_bindir}/zck*
 %{_bindir}/unzck
+%{_libexecdir}/zck_gen_xml_dictionary
 
 %files -n %{libname}
 %{_libdir}/libzck.so.%{major}
