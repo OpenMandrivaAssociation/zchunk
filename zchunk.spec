@@ -4,7 +4,7 @@
 
 Summary:	Compressed file format that allows easy deltas
 Name:		zchunk
-Version:	1.1.16
+Version:	1.2.0
 Release:	1
 Group:		Archiving/Compression
 License:	BSD and MIT
@@ -70,7 +70,7 @@ install -Dpm 0755 contrib/gen_xml_dictionary %{buildroot}%{_libexecdir}/zck_gen_
 %{_bindir}/zck*
 %{_bindir}/unzck
 %{_libexecdir}/zck_gen_xml_dictionary
-%{_mandir}/man1/*zck*.1.*
+%doc %{_mandir}/man1/*zck*.1.*
 
 %files -n %{libname}
 %{_libdir}/libzck.so.%{major}
