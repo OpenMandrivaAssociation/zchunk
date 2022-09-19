@@ -4,7 +4,7 @@
 
 Summary:	Compressed file format that allows easy deltas
 Name:		zchunk
-Version:	1.2.2
+Version:	1.2.3
 Release:	1
 Group:		Archiving/Compression
 License:	BSD and MIT
@@ -52,7 +52,11 @@ library, libzck.
 rm -rf src/lib/hash/sha*
 
 %build
-%meson -Dwith-openssl=enabled -Dwith-zstd=enabled
+%meson \
+	-Dwith-openssl=enabled \
+	-Dwith-zstd=enabled \
+	-Dtests=false
+
 %meson_build
 
 %install
