@@ -4,8 +4,8 @@
 
 Summary:	Compressed file format that allows easy deltas
 Name:		zchunk
-Version:	1.3.0
-Release:	2
+Version:	1.3.1
+Release:	1
 Group:		Archiving/Compression
 License:	BSD and MIT
 URL:		https://github.com/zchunk/zchunk
